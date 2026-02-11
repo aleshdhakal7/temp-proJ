@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>voteformanju</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="mediaqueries.css" />
+  </head>
+  <body>
+    <nav id="desktop-nav">
+      <div class="logo">मञ्जु शर्मा चालिसे</div>
+      <div>
+        <ul class="nav-links">
+          <li><a href="#about">बारेमा</a></li>
+          <li><a href="#experience">दृष्टिकोण </a></li>
+          <li><a href="#projects">अपडेटहरू</a></li>
+          <li><a href="#contact">सम्पर्क</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <nav id="hamburger-nav">
+      <div class="logo">मञ्जु शर्मा चालिसे</div>
+      <div class="hamburger-menu">
+        <div class="hamburger-icon" onclick="toggleMenu()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="menu-links">
+          <li><a href="#about" onclick="toggleMenu()">बारेमा</a></li>
+          <li><a href="#experience" onclick="toggleMenu()">दृष्टिकोण</a></li>
+          <li><a href="#projects" onclick="toggleMenu()">अपडेटहरू</a></li>
+          <li><a href="#contact" onclick="toggleMenu()">सम्पर्क</a></li>
+        </div>
+      </div>
+    </nav>
+
+    <section id="profile">
+      <div class="section__pic-container">
+        <img src="./assets/profile-pic.png" alt="मञ्जु शर्मा चालिसे प्रोफाइल तस्वीर" />
+      </div>
+      <div class="section__text">
+        <p class="section__text__p1"></p>
+        <h1 class="title">समृद्ध र विकसित बागलुङको परिकल्पना
+आफ्नो क्षेत्रको आफ्नै नेतृत्व, हाम्रो चाहना</h1>
+        <p class="section__text__p2">#manjusharma #voteformanju #Baglung2</p>
+        <div class="btn-container">
+          <button class="btn btn-color-2" onclick="document.getElementById('about').scrollIntoView({ behavior: 'smooth' })">थप जान्नुहोस्</button>
+          <button class="btn btn-color-1" onclick="location.href='./#contact'">सम्पर्क जानकारी</button>
+        </div>
+        <div id="socials-container">
+          <a href="https://www.facebook.com/manju.sharma.9047506" target="_blank" rel="noopener noreferrer">
+            <img src="./assets/facebook.png" alt="मेरो Facebook प्रोफाइल" class="icon" />
+          </a>
+          <a href="https://www.tiktok.com/@manjusharmachalise1" target="_blank" rel="noopener noreferrer">
+            <img src="./assets/tiktok.png" alt="मेरो TikTok प्रोफाइल" class="icon" />
+          </a>
+        </div>
+      </div>
+
+      
+    </section>
+
+<section id="past-election">
+  <h1 class="title">
+    सम्झँदै २०७९ को निर्वाचन
+  </h1>
+
+  <p class="past-election-intro">
+    मञ्जु शर्माले २०७९ को निर्वाचनमा आफ्नो क्षेत्रका जनताको विश्वास जितेर महत्वपूर्ण मत हासिल गरिन्। 
+    यसले देखाउँछ कि आगामी २०८२ को निर्वाचनमा उहाँ सक्षम र योग्य उम्मेदवार हुनुहुन्छ।
+  </p>
+
+  <div class="candidates-container">
+    <!-- Candidate 1 -->
+    <div class="candidate-card highlight">
+      <div class="candidate-photo-wrapper">
+        <img src="./assets/devendra.png" alt="देवेन्द्र पौडेल" class="candidate-photo" />
+        <img src="./assets/cpn-maoist-symbol.png" alt="CPN Maoist Symbol" class="party-symbol" />
+      </div>
+      <h3>देवेन्द्र पौडेल</h3>
+      <p class="party">सिपिएन माओवादी</p>
+      <p class="votes" data-votes="24794">0</p>
+    </div>
+
+    <!-- Candidate 2 -->
+    <div class="candidate-card highlight">
+      <div class="candidate-photo-wrapper">
+        <img src="./assets/manju.png" alt="मञ्जु शर्मा" class="candidate-photo" />
+        <img src="./assets/cpn-uml-symbol.png" alt="CPN UML Symbol" class="party-symbol" />
+      </div>
+      <h3>मञ्जु शर्मा</h3>
+      <p class="party">सिपिएन युएमएल</p>
+      <p class="votes" data-votes="20193">0</p>
+    </div>
+
+    <!-- Candidate 3 -->
+    <div class="candidate-card">
+      <div class="candidate-photo-wrapper">
+        <img src="./assets/tila.png" alt="तिला खत्री" class="candidate-photo" />
+        <img src="./assets/swatantra-symbol.png" alt="Rastriya Swatantra Party" class="party-symbol" />
+      </div>
+      <h3>तिला खत्री</h3>
+      <p class="party">राष्ट्रिय स्वतन्त्र पार्टी</p>
+      <p class="votes" data-votes="2327">0</p>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+    <section id="about">
+      <p class="section__text__p1">थप जान्नुहोस्</p>
+      <h1 class="title">मेरो बारेमा</h1>
+      <div class="section-container">
+        <div class="section__pic-container">
+          <img src="./assets/about-pic.png" alt="प्रोफाइल तस्वीर" class="about-pic" />
+        </div>
+        <div class="about-details-container">
+          <div class="about-containers">
+            <div class="details-container">
+              <img src="./assets/experience.png" alt="अनुभव आइकन" class="icon" />
+              <h3>अनुभवी</h3>
+              <p><br /></p>
+            </div>
+            <div class="details-container">
+              <img src="./assets/education.png" alt="शिक्षा आइकन" class="icon" />
+              <h3>शिक्षित</h3>
+
+            </div>
+          </div>
+          <div class="text-container">
+            <p>म राजनीति केवल पदका लागि होइन, जनताको दैनिकी सुधार्ने माध्यमका रूपमा हेर्छु।</p>
+            <p>स्थानीय स्तरमै समाधान खोज्ने सोच, महिलाको सशक्त सहभागिता, र दीर्घकालीन विकास मेरो प्रतिबद्धता हो।</p>
+            <p>मैले बोलेका शब्दभन्दा गरेका कामलाई तपाईंहरूकै अगाडि राख्न चाहन्छु।</p>
+          </div>
+        </div>
+      </div>
+      <img src="./assets/arrow.png" alt="तीर आइकन" class="icon arrow" onclick="location.href='./#experience'" />
+    </section>
+
+ 
+
+
+
+    <section id="experience">
+      <p class="section__text__p1">मेरो दृष्टिकोण र प्रतिबद्धता</p>
+      <h1 class="title">दृष्टिकोण र प्रतिबद्धता</h1>
+      <div class="experience-details-container">
+        <div class="about-containers">
+          <div class="details-container">
+            <h2 class="experience-sub-title">मेरो प्राथमिकताहरू</h2>
+            <div class="article-container">
+              <article>
+                <img src="./assets/checkmark.png" alt="प्रतिबद्धता आइकन" class="icon" />
+                <div>
+                  <h3>स्थानीय विकास</h3>
+                  <p>स्थानीय विकास योजनामा पारदर्शिता</p>
+                </div>
+              </article>
+              <article>
+                <img src="./assets/checkmark.png" alt="प्रतिबद्धता आइकन" class="icon" />
+                <div>
+                  <h3>सशक्तिकरण</h3>
+                  <p>महिला, युवा र कृषकको सशक्तिकरण</p>
+                </div>
+              </article>
+              <article>
+                <img src="./assets/checkmark.png" alt="प्रतिबद्धता आइकन" class="icon" />
+                <div>
+                  <h3>शिक्षा र स्वास्थ्य</h3>
+                  <p>शिक्षा र स्वास्थ्यमा पहुँच सुधार</p>
+                </div>
+              </article>
+              <article>
+                <img src="./assets/checkmark.png" alt="प्रतिबद्धता आइकन" class="icon" />
+                <div>
+                  <h3>पर्यावरण संरक्षण</h3>
+                  <p>पर्यावरण संरक्षणसहित विकास</p>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+<section id="projects">
+  <p class="section__text__p1">मेरो </p>
+  <h1 class="title">मेरो सामाजिक अपडेटहरू</h1>
+  <div class="projects-carousel">
+    <div class="carousel-track">
+      <div class="carousel-item"><img src="./assets/1.jpg" alt="परियोजना १" /></div>
+      <div class="carousel-item"><img src="./assets/2.jpg" alt="परियोजना २" /></div>
+      <div class="carousel-item"><img src="./assets/3.jpg" alt="परियोजना ३" /></div>
+      <div class="carousel-item"><img src="./assets/4.jpg" alt="परियोजना ४" /></div>
+      <div class="carousel-item"><img src="./assets/5.jpg" alt="परियोजना ५" /></div>
+      <div class="carousel-item"><img src="./assets/6.jpg" alt="परियोजना ६" /></div>
+      <div class="carousel-item"><img src="./assets/7.jpg" alt="परियोजना ७" /></div>
+      <div class="carousel-item"><img src="./assets/8.jpg" alt="परियोजना ८" /></div>
+      <div class="carousel-item"><img src="./assets/9.jpg" alt="परियोजना ९" /></div>
+      <div class="carousel-item"><img src="./assets/10.jpg" alt="परियोजना १०" /></div>
+      <div class="carousel-item"><img src="./assets/11.jpg" alt="परियोजना ११" /></div>
+      <div class="carousel-item"><img src="./assets/12.jpg" alt="परियोजना १२" /></div>
+      <div class="carousel-item"><img src="./assets/13.jpg" alt="परियोजना १३" /></div>
+      <div class="carousel-item"><img src="./assets/14.jpg" alt="परियोजना १४" /></div>
+      <div class="carousel-item"><img src="./assets/15.jpg" alt="परियोजना १५" /></div>
+      <div class="carousel-item"><img src="./assets/16.jpg" alt="परियोजना १६" /></div>
+      <div class="carousel-item"><img src="./assets/17.jpg" alt="परियोजना १७" /></div>
+      <div class="carousel-item"><img src="./assets/18.jpg" alt="परियोजना १८" /></div>
+      <div class="carousel-item"><img src="./assets/19.jpg" alt="परियोजना १९" /></div>
+      <div class="carousel-item"><img src="./assets/20.jpg" alt="परियोजना २०" /></div>
+      <div class="carousel-item"><img src="./assets/21.jpg" alt="परियोजना २१" /></div>
+      <div class="carousel-item"><img src="./assets/22.jpg" alt="परियोजना २२" /></div>
+      <div class="carousel-item"><img src="./assets/23.jpg" alt="परियोजना २३" /></div>
+      <div class="carousel-item"><img src="./assets/24.jpg" alt="परियोजना २३" /></div>
+    
+    
+
+      <!-- duplicates for smooth scroll -->
+      <div class="carousel-item"><img src="./assets/1.jpg" alt="परियोजना १" /></div>
+      <div class="carousel-item"><img src="./assets/2.jpg" alt="परियोजना २" /></div>
+      <div class="carousel-item"><img src="./assets/3.jpg" alt="परियोजना ३" /></div>
+      <div class="carousel-item"><img src="./assets/4.jpg" alt="परियोजना ४" /></div>
+      <div class="carousel-item"><img src="./assets/5.jpg" alt="परियोजना ५" /></div>
+    </div>
+  </div>
+  <img src="./assets/arrow.png" alt="तीर आइकन" class="icon arrow" onclick="location.href='./#contact'" />
+</section>
+
+<section id="profile-video-section">
+  <div class="video-card">
+    <h2 class="video-title">मेरो भिडियो प्रस्तुति</h2>
+    <video id="profile-video" controls>
+      <source src="./assets/profile-video.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+  </div>
+</section>
+
+
+
+    <section id="contact">
+      <p class="section__text__p1">सम्पर्क गर्नुहोस्</p>
+      <h1 class="title">सम्पर्क</h1>
+      <div class="contact-info-upper-container">
+        <div class="contact-info-container">
+          <img src="./assets/email.png" alt="इमेल आइकन" class="icon contact-icon email-icon" />
+          <p><a href="mailto:examplemail@gmail.com">Example@gmail.com</a></p>
+        </div>
+        <div class="contact-info-container">
+          <img src="./assets/facebook.png" alt="facebook आइकन" class="icon contact-icon" />
+          <p><a href="https://www.facebook.com/manju.sharma.9047506" target="_blank" rel="noopener noreferrer">Facebook</a></p>
+        </div>
+        <div class="contact-info-container">
+          <img src="./assets/tiktok.png" alt="tiktok आइकन" class="icon contact-icon" />
+          <p><a href="https://www.tiktok.com/@manjusharmachalise1" target="_blank" rel="noopener noreferrer">TikTok</a></p>
+        </div>
+        <div class="contact-info-container">
+          <img src="./assets/call.jpg" alt="call आइकन" class="icon contact-icon" />
+          <p><span>9857640288</span></p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <nav>
+        <div class="nav-links-container">
+          <ul class="nav-links">
+            <li><a href="#about">बारेमा</a></li>
+            <li><a href="#experience">दृष्टिकोण </a></li>
+            <li><a href="#projects">अपडेटहरू</a></li>
+            <li><a href="#contact">सम्पर्क</a></li>
+          </ul>
+        </div>
+      </nav>
+      <p>© 2026 · जनताको सेवा, जनताको भरोसा</p>
+    </footer>
+
+<!-- Landing Video Modal -->
+<div id="landing-video-modal" class="landing-video-modal">
+  <div class="landing-video-content">
+    <span id="close-landing-video" class="close-btn">&times;</span>
+    <video id="landing-video" controls>
+      <source src="./assets/profile-video.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+  </div>
+</div>
+
+
+
+
+
+    <script src="script.js"></script>
+  </body>
+</html>
+

@@ -6,6 +6,9 @@ function toggleMenu() {
   document.querySelector(".hamburger-icon").classList.toggle("open");
 }
 
+// =======================
+// Carousel
+// =======================
 const track = document.querySelector(".carousel-track");
 
 if (track) {
@@ -15,16 +18,13 @@ if (track) {
   let animationId;
   const speed = 0.5;
 
-  // 🔹 Store original items BEFORE duplication
   const originalItems = Array.from(track.children);
 
-  // 🔹 Duplicate once
   originalItems.forEach(item => {
     const clone = item.cloneNode(true);
     track.appendChild(clone);
   });
 
-  // 🔹 Calculate real original width AFTER images load
   function getOriginalWidth() {
     let width = 0;
     originalItems.forEach(item => {
@@ -35,21 +35,15 @@ if (track) {
 
   let originalWidth;
 
-  // Wait for images to fully load
- window.addEventListener("load", () => {
-  originalWidth = getOriginalWidth();
-
-  // Start from clean left edge
-  track.scrollLeft = 0;
-
-  autoScroll();
-});
-
+  window.addEventListener("load", () => {
+    originalWidth = getOriginalWidth();
+    track.scrollLeft = 0;
+    autoScroll();
+  });
 
   function autoScroll() {
     if (!isDragging) {
       track.scrollLeft += speed;
-
       if (track.scrollLeft >= originalWidth) {
         track.scrollLeft -= originalWidth;
       }
@@ -57,7 +51,6 @@ if (track) {
     animationId = requestAnimationFrame(autoScroll);
   }
 
-  // 🖱 Drag Support
   track.addEventListener("mousedown", (e) => {
     isDragging = true;
     startX = e.pageX;
@@ -84,7 +77,6 @@ if (track) {
     autoScroll();
   });
 
-  // 📱 Touch Support
   track.addEventListener("touchstart", (e) => {
     isDragging = true;
     startX = e.touches[0].pageX;
@@ -107,62 +99,29 @@ if (track) {
 }
 
 
-document.addEventListener("DOMContentLoaded", () => {
-  const modal = document.getElementById("landing-video-modal");
-  const video = document.getElementById("landing-video");
-  const closeBtn = document.getElementById("close-landing-video");
 
-  // Show modal on page load
-  modal.classList.add("show");
+// =======================
+// Scroll Animations
+// =======================
 
-  // Attempt to play video with sound
-  video.play().catch(() => {
-    console.log("Autoplay with sound may be blocked. User interaction may be required.");
-  });
-
-  // Function to close modal
-  const closeModal = () => {
-    modal.classList.remove("show");
-    video.pause();
-    video.currentTime = 0;
-  };
-
-  // Close on close button click
-  closeBtn.addEventListener("click", closeModal);
-
-  // Close when clicking outside video content
-  modal.addEventListener("click", (e) => {
-    if (e.target === modal) closeModal();
-  });
-
-  // Close on ESC key
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") closeModal();
-  });
-
-  // Auto-close when video ends
-  video.addEventListener("ended", closeModal);
-});
- // Animate video card on scroll
-const videoCard = document.querySelector(".video-card");
-
-function isInViewport(element) {
+// Single isInViewport function
+function isInViewport(element, offset = 0.85) {
   const rect = element.getBoundingClientRect();
-  return (
-    rect.top <= (window.innerHeight || document.documentElement.clientHeight) * 0.85
-  );
+  return rect.top <= (window.innerHeight || document.documentElement.clientHeight) * offset;
 }
 
+// Video Card Animation
+const videoCard = document.querySelector(".video-card");
 function scrollAnimate() {
-  if (isInViewport(videoCard)) {
+  if (videoCard && isInViewport(videoCard)) {
     videoCard.classList.add("show");
     window.removeEventListener("scroll", scrollAnimate);
   }
 }
-
 window.addEventListener("scroll", scrollAnimate);
-scrollAnimate(); // check immediately in case already visible
+scrollAnimate();
 
+// Votes Animation
 function animateVotes() {
   const voteElements = document.querySelectorAll("#past-election .votes");
 
@@ -172,7 +131,7 @@ function animateVotes() {
     const increment = Math.ceil(target / 150);
     const interval = setInterval(() => {
       count += increment;
-      if(count >= target) {
+      if (count >= target) {
         count = target;
         clearInterval(interval);
       }
@@ -181,18 +140,13 @@ function animateVotes() {
   });
 }
 
-function isInViewport(element) {
-  const rect = element.getBoundingClientRect();
-  return rect.top <= (window.innerHeight || document.documentElement.clientHeight) * 0.85;
-}
-
 function triggerVoteAnimation() {
   const section = document.getElementById("past-election");
-  if (isInViewport(section)) {
+  if (section && isInViewport(section)) {
     animateVotes();
     window.removeEventListener("scroll", triggerVoteAnimation);
   }
 }
 
 window.addEventListener("scroll", triggerVoteAnimation);
-triggerVoteAnimation(); // check on load
+triggerVoteAnimation();

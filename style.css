@@ -679,12 +679,42 @@ body {
   box-sizing: border-box;
 }
 
-/* Full background */
-body {
-  min-height: 100vh;
-  background: url("assets/bg.jpg") no-repeat center center fixed;
-  background-size: cover;
+/* Full-screen background */
+html, body {
+  height: 100%;
   font-family: Arial, sans-serif;
+  position: relative;
+  overflow-x: hidden;
 }
 
+/* Background container using pseudo-element */
+body::before {
+  content: "";
+  position: fixed;   /* stays in place like fixed */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: url("assets/bg.jpg") no-repeat center center;
+  background-size: cover;
+  z-index: -1;       /* behind all content */
+}
 
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: url("assets/bg-large.jpg") no-repeat center center;
+  background-size: cover;
+  z-index: -1;
+}
+
+@media screen and (max-width: 768px) {
+  body::before {
+    background: url("assets/bg-small.jpg") no-repeat center top;
+    background-size: cover;
+  }
+}

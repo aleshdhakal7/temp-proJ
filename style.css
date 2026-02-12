@@ -672,3 +672,6 @@ body {
   margin-bottom: 1rem;
 }
 
+.section__pic-container {
+  margin-right: 7rem; /* adds space between image and text */
+}
